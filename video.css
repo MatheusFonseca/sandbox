@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+:root {
+  --primary-color: #2b9348;
+  --light-color: #ebf2fa;
+  --dark-color: #1c3144;
+  --secondary-color: #c03221;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: var(--light-color);
+}
+
+.video-showcase {
+  position: relative;
+  padding: 0 2rem;
+  text-align: center;
+  height: 100vh;
+  width: 100%;
+  color: var(--light-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgb(43, 147, 72);
+  background: linear-gradient(
+    180deg,
+    rgba(28, 49, 68, 0.7119047448080795) 15%,
+    rgba(71, 152, 93, 0.6838935403262867) 59%,
+    rgba(43, 147, 72, 1) 100%
+  );
+}
+
+#videobg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.video-showcase h1 {
+  font-size: 3.5rem;
+  line-height: 3.5rem;
+}
+
+.video-showcase a {
+  padding: 1rem 1.5rem;
+  text-transform: uppercase;
+  background-color: var(--secondary-color);
+  color: var(--light-color);
+  margin-top: 2rem;
+  border-radius: 2rem;
+  font-weight: bold;
+}
+
+#next-section {
+  padding: 2rem;
+  font-size: 2rem;
+  height: 100vh;
+  background-color: var(--primary-color);
+}
+
+#next-section h2 {
+  text-align: center;
+  color: var(--light-color);
+}
+
+@media (min-aspect-ratio: 16/9) {
+  #videobg {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  #videobg {
+    width: auto;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #videobg {
+    display: none;
+  }
+
+  .video-showcase::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    filter: contrast(130%);
+    background: url(./img/cachorros.jpg) no-repeat center center/cover;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .video-showcase h1 {
+    font-size: 2.5rem;
+  }
+
+  .video-showcase h2 {
+    font-size: 1.1rem;
+  }
+}
